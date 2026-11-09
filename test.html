@@ -1,0 +1,2342 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,
+initial-scale=1.0,
+maximum-scale=1.0,
+user-scalable=no">
+
+<title>Untuk Kamu 🍂</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap"
+rel="stylesheet">
+
+
+<style>
+
+/* =====================================================
+RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    overflow-x: hidden;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    color: #5a3424;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 15%,
+            rgba(255,219,158,.45),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 85%,
+            rgba(130,52,35,.2),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #ead0a9,
+            #f7e7cf,
+            #d7b587
+        );
+}
+
+
+/* =====================================================
+BACKGROUND
+===================================================== */
+
+.background {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100vw;
+    height: 100dvh;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* =====================================================
+DAUN
+===================================================== */
+
+.leaf {
+
+    position: absolute;
+
+    top: -10%;
+
+    width: 18px;
+    height: 12px;
+
+    border-radius:
+        100% 0 100% 0;
+
+    background:
+        var(--color);
+
+    opacity: .8;
+
+    animation:
+
+        falling
+        var(--duration)
+        linear
+        var(--delay)
+        infinite;
+
+    pointer-events: none;
+}
+
+
+/* DAUN RAHASIA */
+
+.secret-leaf {
+
+    pointer-events: auto;
+
+    cursor: pointer;
+
+    z-index: 50;
+
+    filter:
+        drop-shadow(
+            0 0 5px
+            rgba(255,220,130,.8)
+        );
+
+    animation:
+
+        falling
+        var(--duration)
+        linear
+        var(--delay)
+        infinite,
+
+        glowing
+        1.5s
+        ease-in-out
+        infinite alternate;
+}
+
+
+@keyframes glowing {
+
+    from {
+        filter:
+            drop-shadow(
+                0 0 2px
+                rgba(255,220,130,.2)
+            );
+    }
+
+    to {
+        filter:
+            drop-shadow(
+                0 0 12px
+                rgba(255,200,80,.9)
+            );
+    }
+}
+
+
+.leaf::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 1px;
+    height: 13px;
+
+    left: 9px;
+    top: 4px;
+
+    background:
+        rgba(70,40,20,.4);
+
+    transform:
+        rotate(-40deg);
+}
+
+
+@keyframes falling {
+
+    0% {
+
+        transform:
+            translate3d(
+                0,
+                -10vh,
+                0
+            )
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: .8;
+    }
+
+    50% {
+
+        transform:
+            translate3d(
+                var(--sway),
+                55vh,
+                0
+            )
+            rotate(220deg);
+    }
+
+    100% {
+
+        transform:
+            translate3d(
+                calc(
+                    var(--sway) * -1
+                ),
+                115vh,
+                0
+            )
+            rotate(500deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =====================================================
+MAIN
+===================================================== */
+
+.container {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: 100%;
+
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 15px;
+}
+
+
+/* =====================================================
+CARD
+===================================================== */
+
+.card {
+
+    position: relative;
+
+    width:
+        min(700px, 100%);
+
+    min-height:
+        min(650px, 92dvh);
+
+    padding:
+        clamp(30px,7vw,60px)
+        clamp(18px,6vw,45px);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,248,235,.78);
+
+    border:
+        1px solid
+        rgba(100,60,35,.15);
+
+    box-shadow:
+
+        0 25px 70px
+        rgba(80,45,25,.22);
+
+    backdrop-filter:
+        blur(12px);
+
+    overflow: hidden;
+}
+
+
+.content {
+
+    width: 100%;
+
+    max-width: 570px;
+}
+
+
+/* =====================================================
+LANDING
+===================================================== */
+
+.small-title {
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color: #bd6338;
+
+    margin-bottom: 18px;
+}
+
+
+h1 {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(
+            55px,
+            13vw,
+            100px
+        );
+
+    line-height: .88;
+
+    color: #633722;
+
+    margin-bottom: 25px;
+}
+
+
+h1 span {
+
+    color: #bd5b32;
+}
+
+
+/* =====================================================
+HEART EASTER EGG
+===================================================== */
+
+.secret-heart {
+
+    display: inline-block;
+
+    cursor: pointer;
+
+    transition:
+        transform .3s ease;
+}
+
+
+.secret-heart:hover {
+
+    transform:
+        scale(1.2)
+        rotate(-10deg);
+}
+
+
+.secret-heart.found {
+
+    animation:
+        heartbeat
+        .8s
+        ease;
+}
+
+
+@keyframes heartbeat {
+
+    0% {
+        transform: scale(1);
+    }
+
+    30% {
+        transform: scale(1.4);
+    }
+
+    60% {
+        transform: scale(.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.subtitle {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(
+            20px,
+            5vw,
+            26px
+        );
+
+    line-height: 1.35;
+
+    color: #806451;
+
+    margin:
+        0 auto 35px;
+
+    max-width: 500px;
+}
+
+
+/* =====================================================
+BUTTON AREA
+===================================================== */
+
+.buttons {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 140px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+button {
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    border: none;
+
+    cursor: pointer;
+
+    touch-action: manipulation;
+
+    user-select: none;
+}
+
+
+/* =====================================================
+MESSAGE BUTTON
+===================================================== */
+
+#messageBtn {
+
+    --scale: 1;
+
+    position: relative;
+
+    z-index: 10;
+
+    padding:
+        16px 24px;
+
+    border-radius: 50px;
+
+    color: white;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #bd5832,
+            #87392c
+        );
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transform:
+        scale(var(--scale));
+
+    box-shadow:
+
+        0 10px 25px
+        rgba(130,55,40,.3);
+
+    transition:
+
+        transform .35s
+        cubic-bezier(.2,.8,.2,1),
+
+        box-shadow .35s;
+}
+
+
+/* =====================================================
+SKIP BUTTON
+===================================================== */
+
+#skipBtn {
+
+    position: absolute;
+
+    z-index: 30;
+
+    padding:
+        13px 19px;
+
+    border-radius: 50px;
+
+    background:
+        rgba(100,65,45,.09);
+
+    color: #765743;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+
+    transition:
+
+        left .3s ease,
+        top .3s ease,
+        transform .25s ease;
+}
+
+
+/* =====================================================
+HINT
+===================================================== */
+
+.hint {
+
+    margin-top: 25px;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    color:
+        rgba(91,53,37,.55);
+}
+
+
+/* =====================================================
+LETTER
+===================================================== */
+
+.letter {
+
+    display: none;
+
+    animation:
+        showLetter
+        .8s ease;
+}
+
+
+.letter.active {
+    display: block;
+}
+
+
+.landing.hidden {
+    display: none;
+}
+
+
+@keyframes showLetter {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(.97);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+.letter h2 {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(
+            43px,
+            11vw,
+            78px
+        );
+
+    line-height: .95;
+
+    color: #633722;
+
+    margin:
+        15px 0 25px;
+}
+
+
+.letter p {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(
+            18px,
+            5vw,
+            22px
+        );
+
+    line-height: 1.5;
+
+    color: #6f5140;
+
+    margin-bottom: 17px;
+}
+
+
+/* =====================================================
+SPECIAL EASTER EGG WORD
+===================================================== */
+
+.secret-word {
+
+    cursor: pointer;
+
+    color: inherit;
+
+    transition:
+
+        color .3s ease,
+        text-shadow .3s ease;
+}
+
+
+.secret-word:hover {
+
+    color: #a33f2d;
+}
+
+
+.secret-word.active {
+
+    color: #a33f2d;
+
+    text-shadow:
+        0 0 12px
+        rgba(163,63,45,.3);
+}
+
+
+/* =====================================================
+SECRET MESSAGE
+===================================================== */
+
+.secret-message {
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transition:
+
+        max-height .8s ease,
+        opacity .8s ease,
+        margin .8s ease;
+}
+
+
+.secret-message.show {
+
+    max-height: 300px;
+
+    opacity: 1;
+
+    margin:
+        20px 0;
+}
+
+
+.secret-message-inner {
+
+    padding:
+        20px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(164,74,45,.07);
+
+    border:
+        1px dashed
+        rgba(164,74,45,.3);
+}
+
+
+.secret-message-inner p {
+
+    margin: 0;
+
+    color: #9b4432;
+
+    font-size: 21px;
+}
+
+
+/* =====================================================
+EASTER EGG BUTTON
+===================================================== */
+
+.egg-button-wrapper {
+
+    margin:
+        30px 0 20px;
+}
+
+
+.egg-button {
+
+    position: relative;
+
+    padding:
+        13px 22px;
+
+    border-radius: 50px;
+
+    color: #8d4b36;
+
+    background:
+        rgba(141,75,54,.07);
+
+    border:
+        1px solid
+        rgba(141,75,54,.25);
+
+    font-size: 12px;
+
+    transition:
+
+        transform .3s ease,
+        background .3s ease,
+        box-shadow .3s ease;
+}
+
+
+.egg-button:hover {
+
+    transform:
+        translateY(-3px);
+
+    background:
+        rgba(141,75,54,.12);
+
+    box-shadow:
+        0 8px 20px
+        rgba(120,60,40,.12);
+}
+
+
+.egg-button:active {
+
+    transform:
+        scale(.95);
+}
+
+
+/*
+  Glow setelah dibuka
+*/
+
+.egg-button.opened {
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #bd5832,
+            #87392c
+        );
+
+    box-shadow:
+        0 8px 25px
+        rgba(130,55,40,.25);
+}
+
+
+/* =====================================================
+BUTTON EASTER EGG MESSAGE
+===================================================== */
+
+.button-secret {
+
+    display: none;
+
+    margin-top: 18px;
+
+    padding:
+        20px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(189,88,50,.08),
+            rgba(135,57,44,.05)
+        );
+
+    border:
+        1px solid
+        rgba(141,75,54,.18);
+
+    animation:
+        secretPopup
+        .7s
+        ease;
+}
+
+
+.button-secret.show {
+
+    display: block;
+}
+
+
+.button-secret .secret-icon {
+
+    display: block;
+
+    font-size: 30px;
+
+    margin-bottom: 8px;
+}
+
+
+.button-secret p {
+
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 21px;
+
+    color: #87392c;
+}
+
+
+@keyframes secretPopup {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(15px)
+            scale(.95);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =====================================================
+FINAL SURPRISE
+===================================================== */
+
+.final-surprise {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background:
+        rgba(65,35,22,.72);
+
+    backdrop-filter:
+        blur(8px);
+}
+
+
+.final-surprise.show {
+
+    display: flex;
+
+    animation:
+        fadeIn .5s ease;
+}
+
+
+.surprise-box {
+
+    width:
+        min(500px, 92vw);
+
+    padding:
+        40px 25px;
+
+    text-align: center;
+
+    border-radius: 28px;
+
+    background:
+        #fff8eb;
+
+    box-shadow:
+        0 30px 100px
+        rgba(0,0,0,.3);
+
+    animation:
+        popup .7s
+        cubic-bezier(.2,.8,.2,1);
+}
+
+
+.surprise-box h3 {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 50px;
+
+    color: #9c4431;
+
+    margin-bottom: 15px;
+}
+
+
+.surprise-box p {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 23px;
+
+    line-height: 1.4;
+
+    color: #6f5140;
+
+    margin-bottom: 25px;
+}
+
+
+.close-surprise {
+
+    padding:
+        12px 22px;
+
+    border-radius: 50px;
+
+    color: white;
+
+    background:
+        #9c4431;
+}
+
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes popup {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(.7)
+            translateY(30px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+}
+
+
+/* =====================================================
+SIGNATURE
+===================================================== */
+
+.signature {
+
+    margin-top: 28px;
+
+    color:
+        #a64b36 !important;
+
+    font-style: italic;
+}
+
+
+.back {
+
+    margin-top: 15px;
+
+    background: transparent;
+
+    color: #9c5b42;
+
+    font-size: 13px;
+
+    text-decoration:
+        underline;
+
+    text-underline-offset:
+        5px;
+}
+
+
+/* =====================================================
+DECORATION
+===================================================== */
+
+.decoration {
+
+    position: absolute;
+
+    width: 85px;
+    height: 85px;
+
+    border-radius:
+        100% 0 100% 0;
+
+    opacity: .11;
+
+    pointer-events: none;
+}
+
+
+.left {
+
+    left: -35px;
+    bottom: 45px;
+
+    background:
+        #9d4430;
+
+    transform:
+        rotate(25deg);
+}
+
+
+.right {
+
+    right: -35px;
+    top: 50px;
+
+    background:
+        #d28a35;
+
+    transform:
+        rotate(205deg);
+}
+
+
+/* =====================================================
+MOBILE
+===================================================== */
+
+@media (max-width:600px) {
+
+    .container {
+        padding: 12px;
+    }
+
+    .card {
+
+        min-height:
+            calc(100dvh - 24px);
+
+        border-radius:
+            24px;
+
+        padding:
+            35px 18px;
+    }
+
+    .buttons {
+        min-height:
+            140px;
+    }
+
+    .letter p {
+        font-size:
+            19px;
+    }
+
+}
+
+
+/* =====================================================
+SMALL PHONE
+===================================================== */
+
+@media (max-width:360px) {
+
+    .card {
+        padding:
+            28px 14px;
+    }
+
+    h1 {
+        font-size:
+            52px;
+    }
+
+    #messageBtn {
+        padding:
+            14px 16px;
+    }
+
+    #skipBtn {
+        padding:
+            11px 13px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+BACKGROUND DAUN
+===================================================== -->
+
+<div
+    class="background"
+    id="leaves">
+</div>
+
+
+
+<!-- =====================================================
+MAIN
+===================================================== -->
+
+<main class="container">
+
+<div class="card">
+
+<div class="decoration left"></div>
+<div class="decoration right"></div>
+
+
+<div class="content">
+
+
+<!-- =====================================================
+LANDING
+===================================================== -->
+
+<section
+    class="landing"
+    id="landing">
+
+
+<div class="small-title">
+
+    sebuah pesan kecil untukmu
+
+</div>
+
+
+<h1>
+
+    Happy<br>
+
+    <span>
+
+        Birthday
+
+        <!-- EASTER EGG -->
+        <span
+            class="secret-heart"
+            id="secretHeart">
+
+            acaa❤️
+
+        </span>
+
+    </span>
+
+</h1>
+
+
+<p class="subtitle">
+
+    seseorang yang entah bagaimana
+    selalu berhasil membuat dunia terasa
+    jauh lebih hangat.
+
+</p>
+
+
+<div class="buttons">
+
+
+<button
+    id="messageBtn">
+
+    Buka pesannya ♡
+
+</button>
+
+
+<button
+    id="skipBtn">
+
+    Skip
+
+</button>
+
+
+</div>
+
+
+<p
+    class="hint"
+    id="hint">
+
+    katanya, kejutan akan lebih indah
+    kalau dibuka pelan-pelan…
+
+</p>
+
+
+</section>
+
+
+
+<!-- =====================================================
+PESAN
+===================================================== -->
+
+<section
+    class="letter"
+    id="letter">
+
+
+<div class="small-title">
+
+    from my heart, to you
+
+</div>
+
+
+<h2>
+
+    Selamat<br>
+    Ulang Tahun 🍂
+
+</h2>
+
+
+<p>
+
+    Semoga di usia yang baru ini,
+    hari-harimu dipenuhi hal-hal sederhana
+    yang membuatmu tersenyum tanpa alasan.
+
+</p>
+
+
+<p>
+
+    Semoga langkahmu selalu menemukan
+    tempat yang tepat untuk pulang,
+    dan semoga kamu tidak pernah lupa
+    betapa berharganya dirimu. Sekalipun dunia terlihat kejam,
+    tapi percayalah caa
+     kau masih punya tempat untuk pulang. entah itu teman, keluarga, atau orang-orang yang special bagimu
+
+</p>
+
+
+<p>
+
+    Terima kasih sudah menjadi seseorang
+    yang begitu
+
+    <span
+        class="secret-word"
+        id="secretWord">
+
+        special
+
+    </span>.
+
+</p>
+
+
+<!-- =====================================================
+SECRET MESSAGE DARI KATA SPECIAL
+===================================================== -->
+
+<div
+    class="secret-message"
+    id="secretMessage">
+
+    <div
+        class="secret-message-inner">
+
+        <p>
+
+            🤫 Kamu menemukan sesuatu
+            yang sebenarnya ku sembunyikan.
+
+            <br><br>
+
+            Kalau kamu menemukan ini...
+
+            <br><br>
+
+            berarti kamu memang seseorang
+            yang sangat special bagiku. ❤️
+
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<p>
+
+    Aku berharap tahun ini membawa
+    lebih banyak tawa, cerita indah,
+    dan mimpi yang perlahan menjadi nyata.
+
+</p>
+
+
+
+<!-- =====================================================
+EASTER EGG BUTTON
+===================================================== -->
+
+<div class="egg-button-wrapper">
+
+
+<button
+    class="egg-button"
+    id="eggButton">
+
+    Jangan klik ini 🤫
+
+</button>
+
+
+<div
+    class="button-secret"
+    id="buttonSecret">
+
+
+<span class="secret-icon">
+
+    🎁
+
+</span>
+
+
+<p>
+
+    Oke...
+
+    kamu benar-benar menemukannya.
+
+    <br><br>
+
+    Kalau boleh jujur,
+    ada satu hal yang ingin aku katakan:
+
+    <br><br>
+
+    <strong>
+        Aku berharap kamu selalu bahagia.
+    </strong>
+
+    <br><br>
+
+    Bukan cuma hari ini,
+    tapi setiap hari setelahnya. ❤️
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+<p class="signature">
+
+    “Kalau musim berganti,
+    semoga perasaanku padamu tetap
+    menemukan alasan untuk tinggal.”
+
+</p>
+
+
+<button
+    class="back"
+    id="backBtn">
+
+    ← kembali ke awal
+
+</button>
+
+
+</section>
+
+
+</div>
+
+</div>
+
+</main>
+
+
+
+<!-- =====================================================
+FINAL EASTER EGG
+===================================================== -->
+
+<div
+    class="final-surprise"
+    id="finalSurprise">
+
+
+<div class="surprise-box">
+
+
+<h3>
+
+    Kamu menemukannya! 🍂
+
+</h3>
+
+
+<p>
+
+    Dari semua orang yang mungkin membuka
+    website ini...
+
+    <br><br>
+
+    aku berharap orang itu adalah kamu.
+
+    <br><br>
+
+    Selamat ulang tahun,
+    seseorang yang sangat berarti. ❤️
+
+</p>
+
+
+<button
+    class="close-surprise"
+    id="closeSurprise">
+
+    Simpan rahasia ini 🤫
+
+</button>
+
+
+</div>
+
+</div>
+
+
+
+<script>
+
+
+/* =====================================================
+DAUN
+===================================================== */
+
+const leafContainer =
+    document.getElementById(
+        "leaves"
+    );
+
+
+const colors = [
+
+    "#a9442f",
+    "#bd6533",
+    "#d18a35",
+    "#8f4730",
+    "#c56b38",
+    "#7d432e"
+
+];
+
+
+const isMobile =
+    window.innerWidth <= 600;
+
+
+const leafCount =
+    isMobile ? 18 : 32;
+
+
+for (
+    let i = 0;
+    i < leafCount;
+    i++
+) {
+
+    const leaf =
+        document.createElement(
+            "span"
+        );
+
+
+    leaf.classList.add(
+        "leaf"
+    );
+
+
+    leaf.style.left =
+        Math.random() *
+        100 +
+        "vw";
+
+
+    leaf.style.setProperty(
+
+        "--color",
+
+        colors[
+            Math.floor(
+                Math.random() *
+                colors.length
+            )
+        ]
+
+    );
+
+
+    leaf.style.setProperty(
+
+        "--duration",
+
+        (7 + Math.random() * 9)
+        + "s"
+
+    );
+
+
+    leaf.style.setProperty(
+
+        "--delay",
+
+        (-Math.random() * 15)
+        + "s"
+
+    );
+
+
+    leaf.style.setProperty(
+
+        "--sway",
+
+        ((Math.random() - .5) * 35)
+        + "vw"
+
+    );
+
+
+    leafContainer.appendChild(
+        leaf
+    );
+
+}
+
+
+/* =====================================================
+DAUN RAHASIA
+===================================================== */
+
+const secretLeaf =
+    document.createElement(
+        "span"
+    );
+
+
+secretLeaf.classList.add(
+    "leaf",
+    "secret-leaf"
+);
+
+
+secretLeaf.style.left =
+    "82vw";
+
+
+secretLeaf.style.setProperty(
+    "--color",
+    "#d99a3d"
+);
+
+
+secretLeaf.style.setProperty(
+    "--duration",
+    "9s"
+);
+
+
+secretLeaf.style.setProperty(
+    "--delay",
+    "-3s"
+);
+
+
+secretLeaf.style.setProperty(
+    "--sway",
+    "-12vw"
+);
+
+
+leafContainer.appendChild(
+    secretLeaf
+);
+
+
+
+/* =====================================================
+ELEMENT
+===================================================== */
+
+const messageBtn =
+    document.getElementById(
+        "messageBtn"
+    );
+
+
+const skipBtn =
+    document.getElementById(
+        "skipBtn"
+    );
+
+
+const buttons =
+    document.querySelector(
+        ".buttons"
+    );
+
+
+const landing =
+    document.getElementById(
+        "landing"
+    );
+
+
+const letter =
+    document.getElementById(
+        "letter"
+    );
+
+
+const hint =
+    document.getElementById(
+        "hint"
+    );
+
+
+const backBtn =
+    document.getElementById(
+        "backBtn"
+    );
+
+
+const secretHeart =
+    document.getElementById(
+        "secretHeart"
+    );
+
+
+const secretWord =
+    document.getElementById(
+        "secretWord"
+    );
+
+
+const secretMessage =
+    document.getElementById(
+        "secretMessage"
+    );
+
+
+const eggButton =
+    document.getElementById(
+        "eggButton"
+    );
+
+
+const buttonSecret =
+    document.getElementById(
+        "buttonSecret"
+    );
+
+
+const finalSurprise =
+    document.getElementById(
+        "finalSurprise"
+    );
+
+
+const closeSurprise =
+    document.getElementById(
+        "closeSurprise"
+    );
+
+
+
+/* =====================================================
+EASTER EGG SYSTEM
+===================================================== */
+
+let foundHeart = false;
+
+let foundWord = false;
+
+let foundLeaf = false;
+
+let foundButton = false;
+
+
+function checkAllSecrets() {
+
+    /*
+      Sekarang ada 4 Easter Egg.
+    */
+
+    if (
+        foundHeart &&
+        foundWord &&
+        foundLeaf &&
+        foundButton
+    ) {
+
+        setTimeout(
+            () => {
+
+                finalSurprise
+                    .classList
+                    .add("show");
+
+            },
+            900
+        );
+
+    }
+
+}
+
+
+
+/* =====================================================
+EASTER EGG #1
+HEART
+===================================================== */
+
+secretHeart.addEventListener(
+    "click",
+    () => {
+
+        foundHeart = true;
+
+
+        secretHeart.classList.add(
+            "found"
+        );
+
+
+        hint.innerText =
+            "❤️ kamu menemukan rahasia pertama...";
+
+
+        checkAllSecrets();
+
+    }
+);
+
+
+
+/* =====================================================
+EASTER EGG #2
+SPECIAL
+===================================================== */
+
+let wordClicks = 0;
+
+
+secretWord.addEventListener(
+    "click",
+    () => {
+
+        wordClicks++;
+
+
+        if (
+            wordClicks >= 3
+        ) {
+
+            foundWord = true;
+
+
+            secretWord.classList.add(
+                "active"
+            );
+
+
+            secretMessage.classList.add(
+                "show"
+            );
+
+
+            checkAllSecrets();
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+EASTER EGG #3
+DAUN
+===================================================== */
+
+secretLeaf.addEventListener(
+    "click",
+    () => {
+
+        foundLeaf = true;
+
+
+        secretLeaf.style.display =
+            "none";
+
+
+        const notification =
+            document.createElement(
+                "div"
+            );
+
+
+        notification.innerHTML =
+            "🍂 Kamu menemukan daun rahasia.";
+
+
+        notification.style.position =
+            "fixed";
+
+
+        notification.style.left =
+            "50%";
+
+
+        notification.style.bottom =
+            "30px";
+
+
+        notification.style.transform =
+            "translateX(-50%)";
+
+
+        notification.style.zIndex =
+            "200";
+
+
+        notification.style.padding =
+            "12px 20px";
+
+
+        notification.style.borderRadius =
+            "50px";
+
+
+        notification.style.background =
+            "#fff8eb";
+
+
+        notification.style.color =
+            "#8f4430";
+
+
+        notification.style.boxShadow =
+            "0 10px 30px rgba(0,0,0,.2)";
+
+
+        document.body.appendChild(
+            notification
+        );
+
+
+        setTimeout(
+            () => {
+
+                notification.remove();
+
+            },
+            2500
+        );
+
+
+        checkAllSecrets();
+
+    }
+);
+
+
+
+/* =====================================================
+EASTER EGG #4
+BUTTON
+===================================================== */
+
+eggButton.addEventListener(
+    "click",
+    () => {
+
+        foundButton = true;
+
+
+        eggButton.classList.add(
+            "opened"
+        );
+
+
+        eggButton.innerText =
+            "Rahasia terbuka ❤️";
+
+
+        buttonSecret.classList.add(
+            "show"
+        );
+
+
+        checkAllSecrets();
+
+    }
+);
+
+
+
+/* =====================================================
+SKIP
+===================================================== */
+
+let skipCount = 0;
+
+
+const skipTexts = [
+
+    "Skip",
+
+    "Jangan skip 😭",
+
+    "Baca dulu dong 🥺",
+
+    "Tolong baca pesannya...",
+
+    "Sebentar aja 🥹",
+
+    "Please... baca ya?",
+
+    "Aku sudah mempersiapkannya...",
+
+    "Satu kali saja, please ❤️",
+
+    "Jangan tinggalin pesannya 😭",
+
+    "Baca pesannya ya... 🥺❤️"
+
+];
+
+
+function moveSkipButton() {
+
+    skipCount++;
+
+
+    const textIndex =
+        Math.min(
+            skipCount,
+            skipTexts.length - 1
+        );
+
+
+    skipBtn.innerText =
+        skipTexts[textIndex];
+
+
+    let scale =
+        1 +
+        skipCount * .35;
+
+
+    const maxScale =
+        window.innerWidth <= 600
+            ? 2.8
+            : 3.8;
+
+
+    if (
+        scale > maxScale
+    ) {
+
+        scale =
+            maxScale;
+
+    }
+
+
+    messageBtn.style.setProperty(
+        "--scale",
+        scale
+    );
+
+
+    const width =
+        buttons.clientWidth;
+
+
+    const height =
+        buttons.clientHeight;
+
+
+    const buttonWidth =
+        skipBtn.offsetWidth;
+
+
+    const buttonHeight =
+        skipBtn.offsetHeight;
+
+
+    const maxX =
+        width -
+        buttonWidth -
+        10;
+
+
+    const maxY =
+        height -
+        buttonHeight -
+        10;
+
+
+    const randomX =
+        Math.random() *
+        Math.max(
+            10,
+            maxX
+        );
+
+
+    const randomY =
+        Math.random() *
+        Math.max(
+            10,
+            maxY
+        );
+
+
+    skipBtn.style.left =
+        randomX + "px";
+
+
+    skipBtn.style.top =
+        randomY + "px";
+
+
+    skipBtn.style.transform =
+        "none";
+
+
+    if (
+        skipCount === 1
+    ) {
+
+        hint.innerText =
+            "eh, kok kabur? 😭";
+
+    }
+
+    else if (
+        skipCount === 2
+    ) {
+
+        hint.innerText =
+            "serius mau skip lagi? 🥺";
+
+    }
+
+    else if (
+        skipCount === 3
+    ) {
+
+        hint.innerText =
+            "aku sudah bilang... baca dulu 😭";
+
+    }
+
+    else if (
+        skipCount >= 5
+    ) {
+
+        hint.innerText =
+            "tolong... pesan ini memang dibuat khusus untukmu ❤️";
+
+    }
+
+}
+
+
+skipBtn.addEventListener(
+    "click",
+    moveSkipButton
+);
+
+
+
+/* =====================================================
+OPEN MESSAGE
+===================================================== */
+
+messageBtn.addEventListener(
+    "click",
+    () => {
+
+        landing.classList.add(
+            "hidden"
+        );
+
+
+        letter.classList.add(
+            "active"
+        );
+
+    }
+);
+
+
+
+/* =====================================================
+CLOSE FINAL SURPRISE
+===================================================== */
+
+closeSurprise.addEventListener(
+    "click",
+    () => {
+
+        finalSurprise.classList.remove(
+            "show"
+        );
+
+    }
+);
+
+
+
+/* =====================================================
+BACK
+===================================================== */
+
+backBtn.addEventListener(
+    "click",
+    () => {
+
+        letter.classList.remove(
+            "active"
+        );
+
+
+        landing.classList.remove(
+            "hidden"
+        );
+
+
+        skipCount = 0;
+
+
+        messageBtn.style.setProperty(
+            "--scale",
+            1
+        );
+
+
+        skipBtn.innerText =
+            "Skip";
+
+
+        skipBtn.style.left =
+            "50%";
+
+
+        skipBtn.style.top =
+            "50%";
+
+
+        skipBtn.style.transform =
+            "translate(100px, -50%)";
+
+
+        hint.innerText =
+            "katanya, kejutan akan lebih indah kalau dibuka pelan-pelan…";
+
+    }
+);
+
+
+/* =====================================================
+POSISI AWAL SKIP
+===================================================== */
+
+skipBtn.style.left =
+    "50%";
+
+
+skipBtn.style.top =
+    "50%";
+
+
+skipBtn.style.transform =
+    "translate(100px, -50%)";
+
+
+</script>
+
+</body>
+
+</html>
